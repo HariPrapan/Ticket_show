@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ticket Booking</title>
+    <style>
+     {% for show in show %}
+     body{
+     background-image:url("{{show.image_url}}")
+     }
+     {% endfor %}
+      .container {
+      opacity: 0.84;
+  width: 35%;
+  margin: 0 auto;
+  margin-top: 50px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #000;
+}
+.form-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+.form-control {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  font-size: 16px;
+}
+.btn-block {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.btn-block:hover {
+  background-color: #45a049;
+}
+  </style>
+</head>
+<body>
+
+
+<div class="container">
+    <form class="form-container" method="post" action="/book/{{show_name}}/{{show_id}}">
+        <h2 class="form-header">Ticket booking form </h2>
+        <div class="form-group">
+            <h3>     <label for="username">Show :</label> {{show_name}} </h3>
+            Select Venue :  <br><br>     <select id="venue" name="venue">
+
+            <br>
+            {% for ven in venue %}{% for venue in ven%}<option value="{{venue.venue_name}}  {{venue.venue_loc}}">{{venue.venue_name}}  {{venue.venue_loc}}</option>{% endfor %}{% endfor %}<br> <br>
+
+        </div>
+
+        <br> <br><br>
+
+
+        <div class="form-group">
+            <label for="tickets">Number of tickets:</label>
+            <input type="number" class="form-control" id="ticktes" name="tickets" placeholder="Enter no. of tickets">
+        </div>
+
+
+        <div class="form-group">
+            <label for="name">User Name:</label>
+            <input  required type="text" class="form-control" id="password" name="username" placeholder="Enter User_name">
+        </div>
+
+
+        <div class="form-group">
+            <label for="password">Password:</label>
+            <input  required type="password" class="form-control" id="password" name="password" placeholder="Enter password">
+        </div>
+
+
+        <button type="submit" class="btn btn-primary btn-block" >Book</button>
+
+    </form>
+
+</div>
+</body>
+</html>

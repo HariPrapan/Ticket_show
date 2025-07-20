@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>create show</title>
+    <style>
+
+      h1 {
+        text-align: center;
+        font-size: 36px;
+        color: blue;
+      }
+      h5{text-align:center;
+      }
+form {
+        width: 300px;
+        margin: 0 auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+        box-shadow: 0px 0px 10px 0px #ccc;
+      }
+
+      input[type="text"],
+      input[type="number"] {
+        width: 100%;
+        padding: 12px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+      select {
+        width: 100%;
+        padding: 12px;
+        margin-bottom: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #f8f8f8;
+      }
+      .btn-block {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+.btn-block:hover {
+  background-color: #45a049;
+}
+.right-corner {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        font-size: 24px;
+        color: green;
+        text-decoration: none;
+      }
+
+    </style>
+</head>
+<body>
+<h1>Create Show</h1>
+<h5>{{error}}</h5>
+<div class="right-corner">
+    <a href="/admin_dashboard">Admin Dashboard</a>
+    <br>
+    <a href="/create_venue">Create Venue</a>
+</div>
+
+
+<form action="/create_show" method="post">
+    <label for="show">Show Name:</label>
+    <input type="text" id="show" name="show" class="form-inputs" required>
+    <br>
+    <label for="rating">Rating:</label>
+    <input type="number" id="rating" name="rating" class="form-inputs" required danger=*>
+    <br>
+    <label for="tags">Tags:</label>
+    <input type="text" id="tags" name="tags" class="form-inputs" required>
+    <br>
+    <label for="price">Price:</label>
+    <input type="number" id="price" name="price" class="form-inputs" required>
+    <br>
+    <label for="venue_id">Venue id:</label>
+    <input type="number" id="venue_id" name="venue_id" class="form-inputs" required>
+    <br>
+    <label for="image_url">Image url:</label>
+    <textarea id="image_url" name="image_url" class="form-inputs" > </textarea>
+    <br>
+    <label for="shift">Choose shift:</label>
+    <select id="shift" name="shift">
+        <option value="AN">Afternoon</option>
+        <option value="FN">Forenoon</option>
+
+    </select>
+    <br>
+    <button class="btn-block" type="submit" value="Add Show">Add Show </button>
+</form>
+
+
+</body>
+</html>
+

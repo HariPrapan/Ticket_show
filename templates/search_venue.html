@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search Venue</title>
+    <style>
+        .box {
+  width: 30%;
+  height: 150px;
+  background-color: #fff;
+  border: 1px solid black;
+  border-radius: 10px;
+  margin: 20px;
+  text-align: center;
+  padding-top: 15px;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+}
+.page-heading {
+  text-align: center;
+  margin-top: 50px;
+  font-size: 2em;
+}
+.btn-block {
+  width: 40%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  margin: 15px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 10px;
+}
+.btn-block:hover {
+  background-color: #45a049;
+}
+    </style>
+</head>
+<body>
+
+<h1 class="page-heading">Search your favourite venue</h1>
+
+<div class="container">
+
+    <div class="box first-box">
+        <h3>Search using venue name</h3>
+        <form action="/search_venue" method="post">
+            <label for="venue name">Enter name : </label>
+            <input required type="text" name="venue" id="venue" placeholder="Type name of venue">
+            <br>
+            <button type="submit" class="btn btn-primary btn-block" >search venue</button>
+        </form>
+    </div>
+
+    <div class="box second-box">
+        <h3>Search Venue using location</h3>
+        <form action="/search_venue" method="post">
+
+            <label for="location">Enter Location : </label>
+            <input required type="text" name="loc" id="loc" placeholder="Type Location">
+            <br>
+
+            <button type="submit" class="btn btn-primary btn-block" >search venue</button>
+        </form>
+    </div>
+
+</div>
+</body>
+</html>
+

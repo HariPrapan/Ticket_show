@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+
+body {
+  background-color: #F5AAAA;
+}
+.page-heading {
+  text-align: center;
+  margin-top: 50px;
+  font-size: 32px;
+}
+.subheading{
+text-align:center;
+}
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+}
+.box {
+  width: 30%;
+  height: 150px;
+  border: 1px solid red;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #000;
+  margin: 10px;
+  text-align: center;
+  padding-top: 15px;
+}
+.first-box {
+  background-color: #f8d1cc;
+}
+
+.second-box {
+  background-color: #e0f3db;
+}
+
+.third-box {
+  background-color: #d9e2ec;
+}
+
+a.login{position: absolute;
+
+        left: 112px;
+        font-size: 20px;
+        width: 10%;
+        text-decoration: none;
+  background-color: blue;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+a.register{position: absolute;
+
+        left: 450px;
+        font-size: 20px;
+        width: 10%;
+        text-decoration: none;
+  background-color: blue;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+a.admin-login{position: absolute;
+
+        left: 770px;
+        font-size: 20px;
+        width: 10%;
+        text-decoration: none;
+  background-color: blue;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+a.login:hover {
+  background-color: red;
+}
+a.admin-login:hover {
+  background-color: red;
+}
+a.register:hover {
+  background-color: red;
+}
+  </style>
+
+  <title>Ticket website</title>
+
+</head>
+
+<body>
+
+<h1 class="page-heading">Welcome to Movie Booking Website</h1>
+<h3 class="subheading">Designed by <strong> Hari Prapan </strong></h3>
+
+<div class="container">
+
+
+  <div class="box first-box">
+    <h3>Already have an account with us?<h3>
+      <a class="login" href="/user_login" class="box-link">Login Page</a>
+  </div>
+
+
+  <div class="box second-box">
+    <h3>Create a new account</h3>
+    <a class="register" href="/user_register" class="box-link">Register Page</a>
+  </div>
+
+
+  <div class="box third-box">
+    <h3>Are you admin?</h3>
+    <a class="admin-login" href="admin/login" class="box-link">Admin login</a>
+  </div>
+
+</div>
+</body>
+</html>

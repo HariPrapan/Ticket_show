@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Venue</title>
+</head>
+<style>
+h1 {
+        text-align: center;
+        font-size: 36px;
+        color: blue;
+      }
+    form {
+        width: 300px;
+        margin: 0 auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+        box-shadow: 0px 0px 10px 0px #ccc;
+      }
+      input[type="text"],
+      input[type="number"] {
+        width: 100%;
+        padding: 12px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+ .btn-block {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+.btn-block:hover {
+  background-color: #45a049;
+}
+.right-corner {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        font-size: 24px;
+        color: green;
+        text-decoration: none;
+      }
+
+</style>
+<body>
+
+<h1> Create Venue</h1><br>
+<div class="right-corner">
+    <a href="/admin_dashboard">Admin Dashboard</a>
+    <br>
+    <a href="/create_show">Create Show</a>
+</div>
+<form action="/create_venue" method="post">
+
+    Venue name <input required type="text" name="venue" id="venue">
+    <br>
+    Location <input required type="text" name="loc" id="loc">
+    <br>
+    Capacity <input required type="number" name="cap" id="cap">
+    <br>
+    <button class="btn-block" type="submit" value="Add Venue">Add Venue </button>
+</form>
+</body>
+</html>
+

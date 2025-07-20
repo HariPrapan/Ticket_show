@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+    body{
+   background-image:url("https://images.unsplash.com/photo-1496629062893-b0f566065d44?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80")
+   }
+   a{text-decoration:none;
+   }
+    h1{
+    text-align:center;
+    font-size=35px;
+    color:red;
+    }
+    h3{text-align:center;
+    font-size=30px;
+    color:red;
+    }
+    h2{text-align: center;
+    font-size=27px;
+    color:blue;
+    }
+
+      .booked-tickets{
+      text-align:center;
+      font-size=35px;
+    color:red;
+      }
+
+
+a.Book{color:white;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #334;
+    color: white;
+    padding: 20px;
+}
+
+li {
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px;
+    border: 2px solid white;
+    border-radius: 10px;
+}
+a.refresh{position: absolute;
+        top: 70px;
+        left: 20px;
+        font-size: 20px;
+        color: green;
+        text-decoration: none;
+}
+.top-margin{
+	display: flex;
+			align-items: center;
+			background-color: #00008B;
+			color: white;
+			padding: 15px;
+}
+
+		.option-center {
+		font-size: 18px;
+		color:white;
+			flex: 8;
+			cursor: pointer;
+             display: flex;
+			justify-content: center;
+		}
+a.logout{color:white;
+}
+a.show-per{position:absolute;
+top:70px;
+right:20px;
+}
+    </style>
+    <title>home</title>
+</head>
+<body>
+
+<div class="top-margin">
+
+    <div class="option-left">Current user : {{user}}</div>
+    <a class="option-center"href="/search_movie">Search Movie</a>
+    <a class="option-center" href="/search_venue">Search Venue</a>
+    <a class="logout" href="/logout">Logout</a>
+
+</div>
+<br>
+<h1>Movie ticket booking website</h1>
+<h3>Booking is open for tommorow only.</h3>
+<h3><a class="show-per" href="/performance/forecast/bookings">Show's Performance</a></h3>
+<br>
+<a class="refresh" href="/home">Refresh</a>
+
+<br>
+{{count}}
+
+<div class="booked-tickets">
+    <h5>{{msg}}</h5>
+    <h4>Your Booked tickets : <h4>
+
+        {% for ticket in tickets%}
+        {{ticket.show_name}} , {{ticket.venue}}: No. of tickets : {{ticket.tickets}} <a href="/rating/{{ticket.show_id}}">Rate</a> <br>
+        {% endfor %}
+        <br>
+</div>
+<br>
+
+<h2>Trending shows</h2>
+
+
+{%for show in show%}
+<p>
+<ul>
+    <li>Name of show : {{show.show_name}}</li>
+    <li>Rating : {{show.Rating}}</li>
+    <li>Tags : {{show.Tags}}</li>
+
+    <li>Price : {{show.Price}}</li>
+    <li>{{show.venue}}</li>
+    <li><a class="Book" href="/book/{{show.show_name}}/{{show.show_id}}">Book</a></li>
+</ul>
+</p>
+{% endfor %}
+
+<br>
+<br>
+
+
+<h2>Venues</h2>
+
+{% for venue in venue %}
+<ul>
+    <li>Venue id: Venue {{venue.venue_id}}</li>
+    <li>Venue : {{venue.venue_name}}</li>
+    <li>Capacity : {{venue.capacity}}</li>
+    <li>Location :{{venue.venue_loc}}</li>
+</ul>
+{% endfor %}
+
+
+</body>
+</html>
+

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Searched Movie</title>
+    <style>
+        ul {
+    list-style-type: none;
+    margin: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #334;
+    color: white;
+    padding: 20px;
+}
+
+li {
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px;
+    border: 2px solid white;
+    border-radius: 10px;
+}
+a{
+color:white;
+text-decoration:none;
+}
+          {% for show in show %}
+     body{
+     background-image:url("{{show.image_url}}")
+     }
+     {% endfor %}
+     h3{
+     color:Red;
+     }
+    </style>
+</head>
+<body>
+<h3>These are some of the movies based on your given preference</h3>
+
+{%for show in show%}
+<p>
+<ul><li>Show unique id : {{show.show_id}}</li>
+    <li>Name of show : {{show.show_name}}</li>
+    <li>Rating : {{show.Rating}}</li>
+    <li>Tags : {{show.Tags}}</li>
+    <li>Price : Rs.{{show.Price}}</li>
+    <li>Shift : {{show.shift}} </li>
+    <li>Venue id: {{show.venue}} </li>
+    <li><a class="Book" href="/book/{{show.show_name}}/{{show.show_id}}">Book now</a></li>
+</ul>
+</p>
+{% endfor %}
+{%for show in show2%}
+<p>
+<ul><li>Show unique id : {{show.show_id}}</li>
+    <li>Name of show : {{show.show_name}}</li>
+    <li>Rating : {{show.Rating}}</li>
+    <li>Tags : {{show.Tags}}</li>
+    <li>Price : Rs.{{show.Price}}</li>
+    <li>Shift : {{show.shift}} </li>
+    <li>Venue id: {{show.venue}} </li>
+    <li><a class="Book" href="/book/{{show.show_name}}/{{show.show_id}}">Book</a></li>
+</ul>
+</p>
+{% endfor %}
+</body>
+</html>

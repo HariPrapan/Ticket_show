@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <title>Admin Dashbaord</title>
+  <style>
+
+      h1 {
+        text-align: center;
+        font-size: 36px;
+        color: blue;
+      }
+    h3 {
+    text-align: center;
+    font-size=27px;
+    color:red;
+    }
+    a{text-decoration: none;
+    color:white;
+    }
+    h4 {
+    text-align:center;
+    font-size=15px;
+    color:Blue;
+    }
+
+      table {
+  width: 100%;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+}
+
+th {
+  background-color: #f2f2f2;
+  font-size: 20px;
+}
+.top-margin{
+	display: flex;
+			align-items: center;
+			background-color: #00008B;
+			color: white;
+			padding: 15px;
+}
+
+		.option-center {
+			font-size: 18px;
+			flex: 8;
+			cursor: pointer;
+             display: flex;
+			justify-content: center;
+
+		}
+a.ed-dl{color:Blue;
+}
+
+    </style>
+</head>
+<body>
+
+<div class="top-margin">
+  <a class="left-corner" href="/refresh/admin_dashboard">Refresh</a>
+  <a  href="/create_venue" class="option-center">Create Venue</a>
+  <a href="/create_show" class="option-center">Create New Show</a>
+  <a href="/admin_logout" class="right-corner">Logout</a>
+</div>
+
+<h1>Welcome to Admin Dashboard</h1>
+<h3><a href="/performance/forecast/bookings">Show's Performance</a></h3>
+<h4>{{Message}}</h4>
+<h3>Details of Shows</h3>
+
+<table>
+
+  <tr>
+    <th>Show id</th>
+    <th>Show name</th>
+    <th>Ratings</th>
+    <th>Tags</th>
+    <th>Price (in Rs.)</th>
+    <th>Shift</th>
+    <th>Venue id</th>
+    <th>Action</th>
+  </tr>
+
+  {% for show in show %}
+  <tr>
+    <td>{{show.show_id}}</td>
+    <td>{{show.show_name}}</td>
+    <td>{{show.Rating}}</td>
+    <td>{{show.Tags}}</td>
+    <td>{{show.Price}}</td>
+    <td>{{show.shift}}</td>
+
+    <td>{{show.venue}} </td>
+    <td><a class="ed-dl" href="/edit_show/{{show.show_id}}">Edit</a>/<a class="ed-dl" href="/delete_show/{{show.show_id}}">Delete</a></td>
+  </tr>
+  {% endfor %}
+
+</table>
+
+<br>
+<h3>Details of Venues</h3>
+<table>
+
+  <tr>
+    <th>Venue id</th>
+    <th>Venue name</th>
+    <th>venue location</th>
+    <th>Capacity</th>
+    <th>Action</th>
+  </tr>
+
+  {% for venue in venue %}
+  <tr>
+    <td>{{venue.venue_id}}</td>
+    <td>{{venue.venue_name}}</td>
+    <td> {{venue.venue_loc}}</td>
+    <td>{{venue.capacity}}</td>
+    <td><a class="ed-dl" href="/edit_venue/{{venue.venue_id}}">Edit</a>/<a class="ed-dl" href="/delete_venue/{{venue.venue_id}}">Delete</a></td>
+  </tr>
+  {% endfor %}
+
+</table>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+      .container {
+  width: 30%;
+  margin: 0 auto;
+  margin-top: 50px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #000;
+}
+.form-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+.form-control {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  font-size: 16px;
+}
+.btn-block {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+.btn-block:hover {
+  background-color: #45a049;
+}
+  </style>
+  <title>Admin Login</title>
+</head>
+<body>
+<div class="container">
+
+  <form class="form-container" method="post" action="/admin/login">
+    <h2 class="form-header">Admin Login Page <br> {{error}}</h2>
+
+    <div class="form-group">
+      <label for="username">Admin id:</label>
+      <input type="text" class="form-control" id="username" name="admin_id" placeholder="Admin Login id">
+    </div>
+
+    <div class="form-group">
+      <label for="password">Password:</label>
+      <input type="password" class="form-control" id="password" name="pass" placeholder="Enter password">
+    </div>
+
+    <button type="submit" class="btn btn-primary btn-block" >Login</button>
+  </form>
+
+  If you are not admin , <a href="/">Go back</a>
+
+</div>
+</body>
+</html>

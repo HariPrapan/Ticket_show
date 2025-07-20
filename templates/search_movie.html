@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search Movie</title>
+    <style>
+        .box {
+  width: 30%;
+  height: 150px;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 10px;
+  margin: 20px;
+  text-align: center;
+  padding-top: 15px;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+}
+.page-heading {
+  text-align: center;
+  margin-top: 50px;
+  font-size: 2em;
+}
+.btn-block {
+  width: 40%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  margin: 15px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 10px;
+}
+.btn-block:hover {
+  background-color: #45a049;
+}
+    </style>
+</head>
+<body>
+
+
+<h1 class="page-heading">Search your favourite Movie</h1>
+
+<div class="container">
+    <div class="box first-box">
+        <h3>Search using Movie name</h3>
+        <form action="/search_movie" method="post">
+            <label for="movie name">Enter name : </label>
+            <input required type="text" name="movie" id="venue" placeholder="Type name of movie">
+            <br>
+            <button type="submit" class="btn btn-primary btn-block" >search movie</button>
+        </form>
+    </div>
+    <div class="box second-box">
+        <h3>Search movie using tags</h3>
+        <form action="/search_movie" method="post">
+
+            <label for="location">Enter Location : </label>
+            <input required type="text" name="tags" id="tags" placeholder="Type tags">
+            <br>
+
+            <button type="submit" class="btn btn-primary btn-block" >search movie</button>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>

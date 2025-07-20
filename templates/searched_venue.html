@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Searched Venue</title>
+        <style>
+        ul {
+    list-style-type: none; /* remove bullet points */
+    padding: 0; /* remove default padding */
+    margin: 0; /* remove default margin */
+    display: flex; /* make list items display in a row */
+    justify-content: space-around; /* distribute items evenly along the row */
+    align-items: center; /* center align items vertically */
+    background-color: #334; /* add background color to list */
+    color: white; /* set text color to white */
+    padding: 20px; /* add padding to list */
+}
+
+li {
+    font-size: 20px; /* increase font size of items */
+    font-weight: bold; /* make items bold */
+    padding: 10px; /* add padding to items */
+    border: 2px solid white; /* add a white border to items */
+    border-radius: 10px; /* add rounded corners to items */
+}
+
+    </style>
+</head>
+<body>
+<h3>These are the some of the venue based upon your given preference</h3>
+<br>
+<h4>{{error}}</h4>
+{% for venue in venue %}
+<ul>
+    <li>Venue id: Venue {{venue.venue_id}}</li>
+    <li>Venue : {{venue.venue_name}}</li>
+    <li>Capacity : {{venue.capacity}}</li>
+    <li>Location :{{venue.venue_loc}}</li>
+</ul>
+{% endfor %}
+{% for venue in venue2 %}
+<ul>
+    <li>Venue id: Venue {{venue.venue_id}}</li>
+    <li>Venue : {{venue.venue_name}}</li>
+    <li>Capacity : {{venue.capacity}}</li>
+    <li>Location :{{venue.venue_loc}}</li>
+</ul>
+{% endfor %}
+</body>
+</html>
